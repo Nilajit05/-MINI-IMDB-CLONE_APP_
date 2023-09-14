@@ -1,0 +1,70 @@
+/* Movie Details Page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+main {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+#movieDetails{
+    background-color: rgb(242, 236, 236);
+    width: 500px;
+    margin:auto;
+}

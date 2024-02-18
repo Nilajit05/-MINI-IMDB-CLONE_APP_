@@ -1,10 +1,10 @@
-// 1 DOM element
+//  DOM element
 const favoritesList = document.getElementById("favoritesList");
 
 // 2 Retrieve favorites from local storage (if any)
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-// 3 Function to display favorite movies
+// 12 Function to display favorite movies
 function displayFavorites() {
     favoritesList.innerHTML = "";
     favorites.forEach((movie) => {

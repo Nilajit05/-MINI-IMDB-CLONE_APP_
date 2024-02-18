@@ -1,0 +1,125 @@
+/* Favorites page styles */
+/* Navigation styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #CCCC00;
+}
+nav {
+    background-color: #333;
+    padding: 1px ;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+.custom-heading {
+    background-color: #999900; /* Replace #ff0000 with your desired background color */
+    padding: 10px; /* Optional: Add padding for better readability */
+    color: black; /* Optional: Set text color */
+    text-align: center; /* Center-align the text */
+    text-decoration: underline;
+}
+
+
+
+ h1{
+    
+    padding: 10px; 
+    margin: 0}
+
+#favoritesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;align-items: center;
+    background-color: #CCCC00;
+}
+
+.favorite-item {
+    flex: 0 0 calc(25% - 20px); 
+    max-width: calc(25% - 20px);
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+    opacity: 0; /* Start with opacity set to 0 */
+    animation: fadeIn 0.5s ease-in-out forwards; 
+    transition: transform 0.2s ease; /* Apply a transform transition for the hover effect */
+}
+
+/* ... (styles for movie item content and button) ... */
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.favorite-item:hover {
+    transform: translateY(-5px);
+}
+
+.favorite-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.favorite-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.remove-button {
+    background-color: #f5c518;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.remove-button:hover {
+    background-color: #0056b3;
+}

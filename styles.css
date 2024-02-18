@@ -1,0 +1,166 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #999900;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Header styles */
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+/* Search bar styles */
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Style the search button */
+#searchButton {
+    background-color: #f5c518;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+}
+
+/* Main content styles */
+main {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #999900;
+}
+
+/* Movie item styles */
+#movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;align-items: center;
+}
+
+
+/* Style for each movie item */
+
+    .movie-item {
+        max-width: calc(33.33% - 20px);
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        box-sizing: border-box;
+        opacity: 0; 
+        animation: fadeIn 0.5s ease-in-out forwards; 
+        transition: transform 0.2s ease; 
+    }
+    
+    
+    /* Keyframe animation for fading in */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    /* Hover effect */
+    .movie-item:hover {
+        transform: scale(1.05); 
+    }
+
+/* Style for movie item content (title and image) */
+.movie-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.movie-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Style for the "Add to Favorites" button */
+.favorite-button {
+    background-color: #f5c518;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 60%; 
+    display: block; 
+    text-align: center; 
+    margin: 0 auto; 
+}
+
+
+.favorite-button:hover {
+    background-color: #0056b3;
+}
+
+

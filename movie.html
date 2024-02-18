@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="movie.css">
+
+    <title>Movie Details</title>
+   
+</head>
+<body>
+    <header>
+        <h1>Mini IMDB Clone</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </nav>
+    </header>
+        <h1 class="custom-heading">My Favorite Movies</h1>
+
+    <main>
+        <div id="movieDetails">
+        </div>
+    </main>
+    
+    <!-- Include your JavaScript file here -->
+    <script>
+        
+        // Retrieve the IMDb ID from the query parameter
+const urlParams = new URLSearchParams(window.location.search);
+const imdbID = urlParams.get("imdbID");
+
+// Fetch and display movie details
+async function fetchMovieDetails(imdbID) {
+    try {
+        const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=4c5aee86`);
+        const movie = await response.json();
+        displayMovieDetails(movie);
+    } catch (error) {
+        console.error("Error fetching movie details:", error);
+    }
+}
+
+// Function to display movie details
+function displayMovieDetails(movie) {
+    const movieDetails = document.getElementById("movieDetails");
+    movieDetails.innerHTML = `
+        <h2>${movie.Title}</h2>
+        <img src="${movie.Poster}" alt="${movie.Title} Poster">
+        <p>Plot: ${movie.Plot}</p>
+        <p>Year: ${movie.Year}</p>
+        <p>Genre: ${movie.Genre}</p>
+        <!-- Add more details as needed -->
+    `;
+}
+
+// Call the fetchMovieDetails function when the page loads
+fetchMovieDetails(imdbID);
+
+    </script>
+</body>
+</html>

@@ -7,18 +7,18 @@ const favoritesPage = document.getElementById("favoritesPage");
 const moviePage = document.getElementById("moviePage");
 const movieDetails = document.getElementById("movieDetails");
 
-// 9 Store favorites in memory
+//  Store favorites in memory
 let favorites = JSON.parse(localStorage.getItem("favorites")) || []; 
 
-// 10 Handle search button click
+// 2 Handle search button click
 searchButton.addEventListener("click", () => {
     searchMovies();
 });
 
-// 11 Handle search input and fetch movies
+// 3 Handle search input and fetch movies
 searchInput.addEventListener("input", debounce(searchMovies, 500));
 
-// 12 Fetch movie details when a movie item is clicked
+// 4 Fetch movie details when a movie item is clicked
 movieList.addEventListener("click", (event) => {
     const movieItem = event.target.closest(".movie-item");
     if (movieItem) {
@@ -27,12 +27,12 @@ movieList.addEventListener("click", (event) => {
     }
 });
 
-// 13 Display favorites page
+//  Display favorites page
 favoritesPage.addEventListener("click", () => {
     displayFavorites();
 });
 
-// 14 Debounce function to delay search
+// 5 Debounce function to delay search
 function debounce(func, delay) {
     let timer;
     return function () {
@@ -43,7 +43,7 @@ function debounce(func, delay) {
     };
 }
 
-// 15 Function to search movies
+// 6 Function to search movies
 async function searchMovies() {
     const searchTerm = searchInput.value;
     if (searchTerm.trim() === "") {
@@ -66,7 +66,7 @@ async function searchMovies() {
     }
 }
 
-// 16 Function to display search results
+// 7 Function to display search results
 function displayMovies(movies) {
     movieList.innerHTML = "";
     movies.forEach((movie) => {
@@ -91,7 +91,7 @@ function displayMovies(movies) {
     });
 }
 
-// 17 Function to add a movie to favorites
+// 8 Function to add a movie to favorites
 function addToFavorites(movie) {
     if (movie.imdbID) {
         const isAlreadyFavorite = favorites.some((fav) => fav.imdbID === movie.imdbID);
@@ -108,7 +108,7 @@ function addToFavorites(movie) {
 
 
 
-// 20 Function to fetch and display movie details
+// 9 Function to fetch and display movie details
 async function fetchMovieDetails(imdbID) {
     try {
         const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=4c5aee86`);
@@ -119,7 +119,7 @@ async function fetchMovieDetails(imdbID) {
     }
 }
 
-// Function to display movie details
+// 10 Function to display movie details
 movieList.addEventListener("click", (event) => {
     const movieItem = event.target.closest(".movie-item");
     if (movieItem) {
@@ -128,10 +128,10 @@ movieList.addEventListener("click", (event) => {
     }
 });
 
-// 21 Function to navigate to the movie details page
+// 11 Function to navigate to the movie details page
 function navigateToMovieDetails(imdbID) {
     window.location.href = `movie.html?imdbID=${imdbID}`;
 }
 
-// 22 Initialize the app
+//  Initialize the app
 searchInput.focus();
